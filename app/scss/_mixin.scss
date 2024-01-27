@@ -1,0 +1,118 @@
+// !MIXINS
+
+@mixin viewport-md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin viewport-lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin viewport-xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin viewport-xxl {
+  @media (min-width: $breakpoint-xxl) {
+    @content;
+  }
+}
+
+@mixin main-gradient-text($bg-text: $gradient-red-text) {
+  background: $bg-text;
+  color: transparent;
+  background-clip: text;
+}
+
+@mixin title($color: $text-color) {
+  color: $color;
+  font-size: 30px;
+  font-weight: 700;
+  @include viewport-md {
+    font-size: 38px;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin base-link($color: $regular-color, $hover-color: $accent-color) {
+  color: $color;
+  text-decoration: none;
+  transition: 0.2s;
+  font-weight: 700;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+@mixin mini-link {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 10px 0;
+  padding: 0 10px 0 0;
+  @include base-link;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: 0.2s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: 0;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid $regular-color;
+    border-right: 2px solid $regular-color;
+    transform: rotate(45deg);
+    transition: 0.2s;
+  }
+  &:hover::before {
+    border-color: $accent-color;
+  }
+}
+
+@mixin btn {
+  display: inline-block;
+  padding: 18px 30px;
+  background: $regular-color;
+  border-radius: $radius-md;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  animation: shadow 1.5s ease-in infinite reverse;
+  @keyframes shadow {
+    0% {
+      box-shadow: 0px 0px 5px 0px rgba(36, 163, 255, 0.5);
+    }
+    50% {
+      box-shadow: 0px 0px 20px 0px rgba(36, 163, 255, 0.5);
+    }
+    100% {
+      box-shadow: 0px 0px 5px 0px rgba(36, 163, 255, 0.5);
+    }
+  }
+  &:hover {
+    background-color: $hover-color;
+    animation: none;
+  }
+  &:active{
+    background: $active-color;
+    animation: none;
+
+  }
+}

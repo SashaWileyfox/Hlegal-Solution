@@ -1,0 +1,72 @@
+.cards {
+  &__container {
+  }
+
+  &__link {
+    @include mini-link;
+  }
+
+  &__link--display-none {
+    display: none;
+  }
+
+  &__title {
+    margin: 0 0 30px 0;
+
+    @include title;
+    @include main-gradient-text;
+    @include viewport-md {
+      margin: 0 0 60px 0;
+    }
+  }
+  &__services-cards {
+    display: grid;
+    gap: 30px;
+
+    @include viewport-md {
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+    @include viewport-lg {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 60px;
+    }
+  }
+
+  &__wrapper {
+  }
+
+  &__card {
+  }
+
+  &__card-svg {
+    display: inline-block;
+    padding: 14px;
+    line-height: 10px;
+    background: #fff;
+    border-radius: 24px;
+    margin-bottom: 30px;
+    svg {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 15px;
+
+    & a {
+      @include base-link;
+      font-size: 22px;
+    }
+  }
+
+  &__paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+}
+
+.container {
+}

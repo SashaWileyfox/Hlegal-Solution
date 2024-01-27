@@ -1,0 +1,465 @@
+.wrapper {
+  position: relative;
+  margin-bottom: 50px;
+
+  @include viewport-md {
+    margin-bottom: 80px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    right: 20px;
+    height: 10px;
+    background: #cacadb;
+    border-radius: 0 0 12px 12px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 40px;
+    right: 40px;
+    height: 10px;
+    border-radius: 0px 0px 12px 12px;
+    background: #e7e7f2;
+  }
+
+  &.wrapper--white-header-no-bef-aft {
+    &::before,
+    &::after {
+      display: none;
+    }
+    background: #fff;
+  }
+  &.wrapper--margin-bottom {
+    margin-bottom: 80px;
+  }
+  &.wrapper--margin-padding-bottom-zero {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.head {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  background: url(../images/header-letter.svg) no-repeat center / auto 100%;
+  margin-bottom: 30px;
+
+  @include viewport-md {
+    margin-bottom: 60px;
+  }
+
+  &.head--small-header {
+    background: none;
+    min-height: fit-content;
+  }
+
+  &.head--phone-no-margin {
+    margin: 0;
+
+    @include viewport-md {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__header {
+  }
+
+  &__title {
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    padding: 0 30px;
+  }
+
+  &__link {
+    width: 42px;
+    height: 42px;
+    border-radius: $radius-rounded;
+    border: 2px solid $text-color;
+    position: relative;
+    margin: 0 auto 30px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 11px;
+      width: 17px;
+      height: 17px;
+      border-bottom: 2px solid $text-color;
+      border-left: 2px solid $text-color;
+      transform: rotate(-45deg);
+    }
+    &:hover {
+      border-color: $accent-color;
+    }
+    &:hover::before {
+      border-color: $accent-color;
+    }
+  }
+}
+.header {
+  font-weight: 700;
+  @include viewport-md {
+    padding: 50px 0 0;
+  }
+  &__container {
+    @include viewport-lg {
+      display: grid;
+      grid-template-columns: auto 1fr;
+    }
+  }
+  &__container--margin {
+    margin-bottom: 30px;
+    @include viewport-md {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    margin: 0 -30px;
+    background: rgba(245, 245, 250, 0.2);
+
+    @include viewport-md {
+      background: transparent;
+      margin: 0 0 30px;
+      padding: 0;
+      justify-content: flex-start;
+      gap: 6px;
+    }
+    @include viewport-lg {
+      margin: 0 0 16px;
+      justify-content: flex-end;
+    }
+    &.header__inner--bg-gray {
+      background: $bg-color;
+
+      @include viewport-md {
+        background: none;
+      }
+    }
+  }
+
+  &__langs {
+    display: flex;
+  }
+
+  &__langs-item {
+  }
+
+  &__langs-link {
+    color: $basic-white;
+    padding: 5px 7px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-radius: $radius-sm;
+    transition: 0.2s;
+
+    &.active {
+      background-color: $accent-color;
+      &:hover {
+        background: $accent-color;
+      }
+    }
+    &.header__langs-link--text-color {
+      color: $text-color;
+      &.active {
+        color: #fff;
+      }
+      &:hover {
+        background: #f5f5fa;
+      }
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    &:active {
+      background: $accent-color;
+    }
+  }
+
+  &__address {
+    display: none;
+
+    @include viewport-md {
+      color: $text-color;
+      display: block;
+      font-weight: 400;
+    }
+  }
+
+  &__phone {
+    &--text-color {
+      color: $text-color;
+    }
+  }
+
+  &__social {
+    display: none;
+
+    @include viewport-md {
+      display: block;
+      width: 24px;
+      height: 24px;
+      transition: 0.2s;
+    }
+    &__svg {
+      width: 100%;
+      height: 100%;
+      fill: #fff;
+      &:hover {
+        fill: $accent-color;
+      }
+    }
+    &__svg--fill {
+      fill: $text-color;
+    }
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0 10px 0;
+
+    @include viewport-md {
+      padding: 0;
+      margin: 0 0 30px;
+    }
+
+    @include viewport-lg {
+      //   grid-column: 1/2;
+      //   grid-row: 1/3;
+      grid-area: 1/1/3/2;
+      margin: 0;
+    }
+  }
+
+  &__box-logo {
+    display: flex;
+    justify-content: start;
+  }
+  &__box-img {
+    img {
+      width: 69px;
+      height: 32px;
+
+      @include viewport-md {
+        width: 130px;
+        height: 60px;
+      }
+    }
+  }
+  &__box-section-name {
+    height: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    @include viewport-md {
+      font-size: 36px;
+    }
+    &.header__box-section-name--text-color {
+      color: $main-color;
+    }
+  }
+
+  &__box-slash {
+    width: 12px;
+    height: 26px;
+    margin: 0 4px 0 4px;
+
+    @include viewport-md {
+      display: inline-block;
+      width: 21px;
+      height: 47px;
+    }
+  }
+
+  &__box-burger-wrapper {
+    padding: 7px;
+    border-radius: $radius-sm;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    @include viewport-md {
+      display: none;
+    }
+
+    &--white-header-bg {
+      &:hover {
+        background: $separator-color;
+      }
+    }
+  }
+
+  &__box-burger {
+    width: 24px;
+    height: 16px;
+    position: relative;
+    cursor: pointer;
+
+    &::before,
+    &::after,
+    span {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: $basic-white;
+    }
+    &::after {
+      top: auto;
+      bottom: 0;
+    }
+    span {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.header__box-burger--color {
+      &::before,
+      &::after,
+      span {
+        content: "";
+        background-color: $main-color;
+      }
+    }
+  }
+
+  &__nav {
+    position: fixed;
+    left: 8px;
+    bottom: -102%;
+    z-index: 50;
+    right: 8px;
+    background: $basic-white;
+    border-radius: $radius-md $radius-md 0 0;
+    padding: 12px;
+    text-align: center;
+    transition: 0.2s linear;
+
+    &.active {
+      bottom: 0;
+    }
+
+    @include viewport-md {
+      display: block;
+      position: static;
+      background: transparent;
+      padding: 0;
+    }
+  }
+
+  &__nav-close {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 20px;
+    position: relative;
+    margin-left: auto;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #ec6f5d;
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    @include viewport-md {
+      display: none;
+    }
+  }
+
+  &__nav-list {
+    @include viewport-md {
+      display: flex;
+      gap: 15px;
+      @include viewport-lg {
+        justify-content: end;
+      }
+    }
+  }
+
+  &__nav-item {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+
+      @include viewport-md {
+        margin: 0;
+      }
+    }
+  }
+
+  &__nav-link {
+    font-size: 24px;
+    display: block;
+    background: $bg-color;
+    border-radius: $radius-md;
+    padding: 7px 0;
+    transition: 0.2s;
+
+    &.current-page {
+      color: $accent-color;
+      border-color: $accent-color;
+      &:hover {
+        border-color: $accent-color;
+      }
+    }
+
+    @include base-link($regular-color, none);
+    &:hover {
+      background: $separator-color;
+    }
+    @include viewport-md {
+      font-size: 16px;
+      border-bottom: 2px solid transparent;
+      background: none;
+      padding: 0;
+      padding-bottom: 3px;
+      border-radius: 0px;
+      @include base-link($basic-white, none);
+
+      &:active {
+        color: $accent-color;
+        border-color: $accent-color;
+      }
+      &:hover {
+        border-bottom: 2px solid $basic-white;
+        background: none;
+      }
+      &:active:hover {
+        border-color: $accent-color;
+      }
+    }
+    &.header__nav-link--text-color {
+      color: $regular-color;
+      &.current-page {
+        color: $accent-color;
+      }
+    }
+  }
+}

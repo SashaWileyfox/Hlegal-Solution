@@ -1,0 +1,49 @@
+body {
+  font-family: "Montserrat";
+  font-weight: 400;
+  line-height: 1.5;
+  color: $basic-white;
+}
+
+.hidden {
+  position: absolute;
+  z-index: -100;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.wrapper {
+  background: $gradient-supersoft;
+  padding: 0 0 60px 0;
+  border-radius: 0 0 $radius-md $radius-md;
+}
+
+.container {
+  padding: 0 30px;
+  @include viewport-md {
+    max-width: 708px;
+    margin: 0 auto;
+  }
+  @include viewport-lg {
+    max-width: 964px;
+  }
+  @include viewport-xl {
+    max-width: 1380px;
+  }
+  @include viewport-xxl {
+    max-width: 1660px;
+  }
+}
+.dot {
+  display: none;
+  @include viewport-md {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: $radius-rounded;
+    background: $separator-color;
+    &--gray {
+      background: $text-color;
+    }
+  }
+}

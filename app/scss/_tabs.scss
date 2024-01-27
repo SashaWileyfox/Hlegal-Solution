@@ -1,0 +1,98 @@
+.tabs {
+  &__container {
+    margin-bottom: 30px;
+
+    @include viewport-md {
+      margin-bottom: 60px;
+    }
+    @include viewport-lg {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 30px;
+    white-space: nowrap;
+    overflow: auto;
+    padding: 0 30px 30px 0;
+    margin-right: -30px;
+    text-align: end;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include viewport-md {
+      padding: 0 30px 60px 0;
+      margin-right: calc(-50vw + 324px);
+    }
+    @include viewport-lg {
+      flex-flow: column;
+      flex: 1 1 40%;
+      margin: 0;
+      padding: 0 64px 0 0;
+      border-right: 4px solid rgba(255, 255, 255, 0.3);
+    }
+    @include viewport-xl {
+      flex: 1 1 35%;
+    }
+    @include viewport-xxl {
+      flex: 1 1 30%;
+    }
+  }
+
+  &__link-item {
+    cursor: pointer;
+
+    @include title;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &.active {
+      @include main-gradient-text;
+    }
+  }
+
+  &__content {
+    padding: 30px 0 0 0;
+    border-top: 4px solid rgba(255, 255, 255, 0.3);
+
+    @include viewport-md {
+      padding: 64px 0 0 0;
+    }
+    @include viewport-lg {
+      flex: 1 1 40%;
+      margin: 0;
+      padding: 0 0 0 60px;
+      border: none;
+    }
+    @include viewport-xl {
+      flex: 1 1 50%;
+    }
+    @include viewport-xxl {
+      flex: 1 1 55%;
+    }
+  }
+
+  &__content-item {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__content-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  &__content-paragraph {
+    font-size: 19px;
+    line-height: 1.58;
+  }
+}

@@ -1,0 +1,110 @@
+.team {
+  &__container {
+  }
+
+  &__title {
+    margin: 0 auto 30px auto;
+    @include title;
+    @include main-gradient-text;
+    
+    @include viewport-md {
+        margin: 0 auto 60px auto;
+    }
+    @include viewport-lg {
+        max-width: 724px;
+      }
+      @include viewport-xl {
+        max-width: 1140px;
+      }
+      @include viewport-xxl {
+        max-width: 1420px;
+      }
+  }
+  &__title-container{
+   
+    }
+  
+
+  &__wrapper {
+    @include viewport-md {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
+    }
+    @include viewport-lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    &:not(:last-child){
+        margin-bottom: 30px;
+    }
+    @include viewport-md{
+        &:not(:last-child){
+            margin-bottom: 0px;
+        }
+    }
+  }
+
+  &__img {
+    border-radius: $radius-md;
+    margin-bottom: 15px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__name-link-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title-wrapper {
+  }
+
+  &__title-name {
+    margin-bottom: 5px;
+    a {
+      color: $main-color;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+
+  &__subtitle {
+    color: $text-color;
+    font-size: 14px;
+  }
+  &__open-link {
+    clear: both;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: $radius-rounded;
+    background: $bg-color;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: 9px;
+      width: 11px;
+      height: 11px;
+      border-bottom: 2px solid $regular-color;
+      border-left: 2px solid $regular-color;
+      transform: rotate(-135deg);
+    }
+    &:hover::before {
+      border-color: $accent-color;
+    }
+    &:hover{
+        background: $bg-alt-color;
+    }
+
+  }
+}
+.container {
+}
+

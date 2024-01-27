@@ -1,0 +1,48 @@
+.separator {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 114px;
+  background: url(../images/about-us/ubout-team.png) no-repeat center / 100%,
+    linear-gradient(265deg, #f01432 0%, #323264 29.69%), lightgray 50%;
+  background-blend-mode: screen, normal;
+  margin-bottom: 30px;
+
+  @include viewport-md {
+    min-height: 234px;
+    margin-bottom: 60px;
+  }
+  @include viewport-lg {
+    min-height: 312px;
+  }
+  @include viewport-xl {
+    min-height: 438px;
+  }
+  @include viewport-xxl {
+    min-height: 584px;
+  }
+
+  &__title {
+    color: #fff;
+    text-shadow: 0px 15px 30px rgba(40, 40, 86, 0.8);
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 13px;
+    margin-left: 13px;
+    font-style: normal;
+    text-transform: uppercase;
+    opacity: 0.8;
+    @include viewport-md {
+      font-size: 46px;
+      letter-spacing: 63px;
+      margin-left: 63px;
+    }
+    @include viewport-lg {
+      font-size: 86px;
+    }
+    @include viewport-xl {
+      font-size: 96px;
+    }
+  }
+}

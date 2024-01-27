@@ -1,0 +1,97 @@
+.companies {
+  @include viewport-xxl {
+    padding-bottom: 60px;
+  }
+  &__title {
+    color: #323264;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 30px 0;
+  }
+
+  &__inner {
+    max-height: 720px;
+    overflow: hidden;
+    margin: 0 auto;
+
+    @include viewport-md {
+      max-height: auto;
+      overflow: visible;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @include viewport-xxl {
+      max-width: 1720px;
+      border-radius: $radius-md;
+      overflow: hidden;
+    }
+  }
+
+  &__block {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include viewport-md {
+      flex: 0 0 33.333%;
+    }
+
+    @include viewport-lg {
+      flex: 0 0 25%;
+    }
+  }
+
+  &__block--lightBlue {
+    background: #1c4280;
+  }
+
+  &__block--darkBlue {
+    background: #143646;
+  }
+
+  &__block--orange {
+    background: #f48b30;
+  }
+
+  &__block--violet {
+    background: #9e4dc3;
+  }
+
+  &__block--lightOrange {
+    background: #fd9339;
+  }
+
+  &__block--whiteGray {
+    background: #e2e2e4;
+  }
+
+  &__block--red {
+    background: #c71c36;
+  }
+
+  &__block--white {
+    background: #dcf3f9;
+  }
+
+  &__block--beige {
+    background: #eaeaea;
+  }
+
+  &__block--darkViolet {
+    background: #282240;
+  }
+
+  &__block--blue {
+    background: #1d4568;
+  }
+
+  &__block--black {
+    background: #000;
+  }
+}

@@ -1,0 +1,25 @@
+@import "fonts";
+@import "reset";
+@import "vars";
+@import "mixin";
+@import "global";
+@import "header";
+@import "tabs";
+@import "cards-I";
+@import "companies";
+@import "posts";
+@import "footer";
+
+// SLIDER IMPORT
+@import "../../node_modules/swiper/swiper.scss";
+@import "../../node_modules/swiper/modules/pagination.scss";
+// _____________
+@import "team-swiper";
+@import "popup";
+@import "service-entry-page.scss";
+@import "service-offer";
+@import "contacts";
+@import "team-page";
+@import "about-us-description";
+@import "about-us-swiper";
+@import "about-us-separator.scss";

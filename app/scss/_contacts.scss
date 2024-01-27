@@ -1,0 +1,177 @@
+.main-wrapper-contacts {
+}
+.main {
+  &__container {
+    padding-bottom: 30px;
+
+    @include viewport-md {
+      padding-bottom: 60px;
+    }
+    @include viewport-lg {
+      display: flex;
+      gap: 60px;
+    }
+    @include viewport-xl {
+      max-width: 1140px;
+    }
+    @include viewport-xxl {
+      max-width: 1420px;
+    }
+  }
+}
+
+.contacts {
+  margin-bottom: 30px;
+
+  @include viewport-md{
+    margin-bottom: 60px;
+  }
+  @include viewport-lg {
+    flex: 1 1 45%;
+    margin-bottom: 0;
+}
+
+  &__inner {
+    line-height: 30px;
+    color: $main-color;
+    font-size: 21px;
+    font-weight: 400;
+  }
+
+  &__address {
+    margin-bottom: 30px;
+  }
+
+  &__phone {
+    margin-bottom: 30px;
+    padding-top: 30px;
+    border-top: 4px solid $separator-color;
+  }
+
+  &__mail {
+    display: block;
+    @include base-link;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+  &__social {
+    display: flex;
+    color: $regular-color;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-top: 30px;
+    border-top: 4px solid $separator-color;
+  }
+
+  &__svg {
+    display: block;
+    width: 39px;
+    height: 39px;
+    fill: $regular-color;
+    transition: 0.2s;
+    margin-right: 10px;
+    &:hover {
+      fill: $accent-color;
+    }
+  }
+}
+
+.form {
+  flex: 1 1 45%;
+
+  & input,
+  & textarea {
+    padding: 15px;
+    border-radius: 8px;
+    background: #fff;
+    border: none;
+    outline: none;
+  }
+
+  & input::placeholder,
+  & textarea::placeholder {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: #b3b3ba;
+  }
+
+  & input:focus,
+  & textarea:focus {
+    border: 1px solid $regular-color;
+  }
+
+  & input:invalid,
+  & textarea:invalid {
+    color: #f00;
+    border: 1px solid #f00;
+  }
+
+  & input:invalid:invalid::placeholder,
+  & textarea:invalid::placeholder {
+    color: #f00;
+  }
+
+  & input:focus::placeholder,
+  & textarea:focus::placeholder {
+    color: #000;
+  }
+
+  &__container {
+  }
+  &__wrapper {
+    padding: 30px;
+    background: $bg-color;
+    border-radius: $radius-md;
+  }
+
+  &__title {
+    @include main-gradient-text;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  &__form-inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    margin-bottom: 15px;
+  }
+
+  &__message {
+    max-height: 130px;
+    margin-bottom: 30px;
+    overflow: auto;
+  }
+
+  &__subtitle {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: var(--Grey-Text, #b3b3ba);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__phone {
+    margin-bottom: 15px;
+  }
+
+  &__email {
+    margin-bottom: 30px;
+  }
+
+  &__btn {
+    width: 100%;
+    @include btn;
+  }
+}

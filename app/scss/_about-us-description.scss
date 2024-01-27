@@ -1,0 +1,94 @@
+.description {
+  &__container {
+    margin-bottom: 30px;
+    @include viewport-md {
+      margin-bottom: 60px;
+    }
+    @include viewport-lg {
+      display: flex;
+      gap: 30px;
+    }
+    @include viewport-xl {
+      max-width: 1140px;
+    }
+    @include viewport-xxl {
+      max-width: 1420px;
+    }
+  }
+
+  &__text-box {
+    margin-bottom: 30px;
+    flex: 1 1 51%;
+
+    @include viewport-lg {
+      margin-bottom: 0;
+    }
+    @include viewport-xl {
+      flex: 1 1 60%;
+    }
+    @include viewport-xxl {
+      flex: 1 1 65%;
+    }
+  }
+
+  &__title {
+    @include title;
+    @include main-gradient-text;
+    margin-bottom: 30px;
+  }
+
+  &__paragraph {
+    color: #000;
+    font-size: 19px;
+    line-height: 30px;
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title-box {
+    flex: 1 1 40%;
+    @include viewport-xl {
+      flex: 1 1 35%;
+    }
+    @include viewport-xxl {
+      flex: 1 1 25%;
+    }
+  }
+
+  &__title-box-inner{
+    padding-left: 30px;
+    
+    &--border-l {
+        border-left: 4px solid $separator-color;
+      }
+  }
+  
+
+  &__indicator-item {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__indicator-title {
+    @include title;
+    @include main-gradient-text;
+    font-size: 36px;
+  }
+
+  &__title-svg {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+
+  &__indicator-paragraph {
+    color: $main-color;
+    font-size: 16px;
+  }
+}
+.container {
+}

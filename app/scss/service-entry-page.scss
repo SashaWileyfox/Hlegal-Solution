@@ -1,0 +1,55 @@
+.service-description {
+  margin-bottom: 30px;
+  @include viewport-md {
+    margin-bottom: 60px;
+  }
+
+  &__container {
+  }
+
+  &__wrapper {
+    text-align: center;
+    padding-bottom: 30px;
+    @include viewport-md {
+      padding-bottom: 60px;
+    }
+    border-bottom: 4px solid rgba(255, 255, 255, 0.5);
+  }
+
+  &__svg {
+    display: inline-block;
+    padding: 14px;
+    line-height: 10px;
+    background: #fff;
+    border-radius: 24px;
+    margin-bottom: 30px;
+
+    svg {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    @include title;
+    @include main-gradient-text;
+  }
+  &__paragraph {
+    font-size: 19px;
+    line-height: 1.58;
+    margin-bottom: 30px;
+    margin-bottom: 30px;
+
+    p:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__btn {
+    @include btn;
+  }
+}
+
+.container {
+}

@@ -1,0 +1,42 @@
+.service-offer {
+  &__container {
+  }
+
+  &__list {
+    @include viewport-md {
+      columns: 2;
+      column-gap: 60px;
+    }
+  }
+
+  &__list-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  &__list-item {
+    display: block;
+    font-size: 18px;
+    line-height: 1.45;
+    position: relative;
+    padding-left: 14px;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: $radius-rounded;
+      background: $accent-color;
+    }
+  }
+}
+.container {
+}

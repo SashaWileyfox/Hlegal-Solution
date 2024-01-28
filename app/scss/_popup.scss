@@ -1,113 +1,3 @@
-// .popup .my-popup .fade-in {
-// }
-// .popup {
-//   overflow: auto;
-// }
-// .popup-content {
-//   font-family: Montserrat;
-//   padding: 30px !important;
-//   border-radius: 12px !important;
-//   align-items: flex-start;
-//   overflow: auto;
-// }
-// .popup-header {
-//   justify-content: start !important;
-// }
-// .popup textarea::placeholder,
-// input::placeholder {
-//   font-family: Montserrat;
-//   font-size: 16px;
-//   font-style: normal;
-//   font-weight: 400;
-//   color: #b3b3ba;
-// }
-// .popup.my-popup .popup-content {
-//   background-color: #ffffff !important;
-//   width: min(650px, 90vw) !important;
-//   background: var(--Grey-Bg, #f5f5fa) !important;
-//   box-shadow: 0px 15px 80px 0px rgba(40, 40, 86, 0.5) !important;
-// }
-// .popup-title {
-//   color: #b3b3ba !important;
-//   background: -webkit-gradient(
-//     linear,
-//     left top,
-//     right top,
-//     from(#f0145a),
-//     to(#ef8080)
-//   ) !important;
-//   background: linear-gradient(90deg, #f0145a, #ef8080) !important;
-//   color: rgba(0, 0, 0, 0) !important;
-//   -webkit-background-clip: text !important;
-//   background-clip: text !important;
-//   font-size: 38px !important;
-//   margin-top: 0 !important;
-//   padding-right: 20px;
-// }
-// .popup-close {
-//   color: #ec6f5d !important;
-//   margin-top: 15px !important;
-//   font-size: min(53.1px, 8vw) !important;
-//   right: 30px !important;
-// }
-
-// .popup-body p {
-//   margin-top: 0 !important;
-//   margin-bottom: 0 !important;
-//   text-align: start;
-// }
-// .popup.my-popup .popup-body {
-//   margin-left: 0% !important;
-//   margin-right: 0% !important;
-// }
-// .popup-body {
-//   text-align: start !important;
-//   width: 100%;
-// }
-
-// .popup-body input,
-// .popup-body textarea {
-//   width: 100%;
-//   padding: 15px;
-//   border-radius: 8px;
-//   background: #fff;
-//   border: none;
-//   outline: none;
-// }
-// .first-input,
-// .third-input {
-//   margin-bottom: 15px !important;
-// }
-// .popup textarea {
-//   margin-bottom: 30px !important;
-//   height: 130px !important;
-//   resize: none;
-// }
-// .second-input::placeholder {
-//   text-align: start;
-// }
-// .fourth-input {
-//   margin-bottom: 30px !important;
-// }
-
-// .popup-body h3 {
-//   margin-bottom: 15px !important;
-//   letter-spacing: 1px;
-//   color: #b3b3ba !important;
-//   font-size: min(14px, 5.5vw) !important;
-//   font-weight: 700 !important;
-// }
-
-// .popup.my-popup .popup-body button {
-//   width: 100% !important;
-//   background: #24a3ff !important;
-//   color: #fff;
-//   padding: 18px 30px !important;
-//   box-shadow: 0px 0px 20px 0px rgba(36, 163, 255, 0.5);
-//   font-weight: 700;
-//   font-size: 16px;
-// }
-
 .popup {
   width: 100%;
   height: 100%;
@@ -118,23 +8,10 @@
   z-index: 9999;
   transform: scale(0);
   transition: 0.2s linear;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: auto;
   display: flex;
   padding: 30px;
-
-  &::before {
-    content: "";
-    inset: 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    background: $main-color;
-    opacity: 0.7;
-    width: 100%;
-    height: 100%;
-
-  }
+  background: rgba($main-color,0.7);
 
   &.active {
     transform: scale(100%);
@@ -150,10 +27,12 @@
     position: relative;
     z-index: 9999;
     max-width: 650px;
+    // height: 100%;
     padding: 30px;
     background: $bg-color;
     border-radius: $radius-md;
     margin: auto;
+    // overflow: auto;
   }
 
   &__header {

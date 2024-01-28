@@ -2,29 +2,79 @@
   background: $bg-color;
   padding: 60px 0;
   &__container {
+    overflow: hidden;
+    padding: 0 60px;
+
+    @include viewport-md{
+        padding: 0 30px;
+    }
   }
 
   &__swiper {
-    overflow: hidden;
   }
 
   &__slide {
-    width: 300px !important;
-    height: 110px !important;
     padding: 15px;
     background: #fff;
     padding: 25px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    margin-bottom: 30px;
+    border-radius: $radius-md;
+    
+    img{
+        height: 40px;
+
+        @include viewport-lg{
+            height: auto;
+        }
+    }
+  }
+
+  &__slide-one {
+    width: 53.4px;
+    @include viewport-lg{
+        width: auto;
+    }
+  }
+
+  &__slide-two {
+    width: 106px;
+    @include viewport-lg{
+        width: auto;
+    }
+  }
+
+  &__slide-three {
+    width: 130px;
+    @include viewport-lg{
+        width: auto;
+    }
+  }
+
+  &__slide-four {
+    width: 110.67px;
+    @include viewport-lg{
+        width: auto;
+    }
+  }
+
+  &__slide-five {
+    width: 106px;
+    @include viewport-lg{
+        width: auto;
     }
   }
 
   &__pagination {
+    position: static;
+
+    .swiper-pagination-bullet {
+      width: 16px;
+      height: 16px;
+      background: $regular-color;
+    }
   }
 }
 .container {
@@ -33,10 +83,8 @@
 }
 .swiper-wrapper {
   height: fit-content;
-  display: flex;
 }
 .swiper-slide {
-
 }
 .swiper-pagination {
 }

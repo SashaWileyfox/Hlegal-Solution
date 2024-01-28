@@ -45,15 +45,23 @@
 })();
 
 (() => {
-  const isSwiper = document.querySelector(".about-us-swiper");
+  const isSwiper = document.querySelector(".achievements__swiper");
   if (isSwiper) {
-    const swiper = new Swiper(".about-us-swiper", {
+    const swiper = new Swiper(".achievements__swiper", {
       loop: true,
-      spaceBetween: 40,
+      spaceBetween: 60,
+      slidesPerView: 1,
       speed: 700,
       grabCursor: true,
+      breakpoints:{
+        768:{
+            slidesPerView: 4,
+            spaceBetween: 40,
+        }
+        
+      },
       pagination: {
-        el: ".about-us-swiper-pagination",
+        el: ".achievements__pagination",
       },
     });
   }
@@ -64,7 +72,7 @@ const openPopUp = document.querySelector('.service-description__btn');
 const closePopUp = document.querySelector('.popup__close');
 const popUp = document.querySelector('.popup');
 
-openPopUp.addEventListener('click', function(e){
+openPopUp.addEventListener('click', function (e) {
     e.preventDefault();
     popUp.classList.add('active');
     scrollController.disabledScroll();
@@ -74,14 +82,17 @@ closePopUp.addEventListener('click', () => {
     popUp.classList.remove('active');
     scrollController.enableScroll();
 })
+
+
+
+
 const scrollController = {
     scrollPosition: 0,
     disabledScroll() {
         scrollController.scrollPosition = window.scrollY;   //щоб при відкритті попап нас не кидало наверх сторінки
         document.body.style = `
         overflow: hidden;
-        position: fixed;
-        top: -${scrollController.scrollPosition}px;
+        top: ${scrollController.scrollPosition}px;
         left: 0;            //для того що правильно рацював на айфонах//
         height: 100vh;
         width: 100vw;

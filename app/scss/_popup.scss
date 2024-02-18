@@ -11,16 +11,13 @@
   overflow: auto;
   display: flex;
   padding: 30px;
-  background: rgba($main-color,0.7);
+  background: rgba($main-color, 0.7);
 
   &.active {
     transform: scale(100%);
   }
 
- 
-
   &__container {
-   
   }
 
   &__body {
@@ -39,6 +36,7 @@
     display: flex;
     justify-content: space-between;
   }
+
   &__title {
     @include main-gradient-text;
     font-size: 30px;
@@ -51,22 +49,24 @@
       font-size: 38px;
     }
   }
+
   &__close {
     width: 32px;
     height: 32px;
     position: relative;
     margin-left: 30px;
     cursor: pointer;
-   
+    border-radius: $radius-sm;
 
     &::before,
     &::after {
       content: "";
       position: absolute;
       top: 7px;
-      right: 50%;
+      left: 15px;
       height: 20px;
     }
+
     &::before {
       border-right: 2px solid #ec6f5d;
       transform: rotate(-45deg);
@@ -74,6 +74,10 @@
     &::after {
       border-left: 2px solid #ec6f5d;
       transform: rotate(45deg);
+    }
+    
+    &:hover {
+      background: $separator-color;
     }
   }
 

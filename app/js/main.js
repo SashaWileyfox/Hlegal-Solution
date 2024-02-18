@@ -72,16 +72,21 @@ const openPopUp = document.querySelector('.service-description__btn');
 const closePopUp = document.querySelector('.popup__close');
 const popUp = document.querySelector('.popup');
 
-openPopUp.addEventListener('click', function (e) {
-    e.preventDefault();
-    popUp.classList.add('active');
-    scrollController.disabledScroll();
-})
+if (openPopUp){
+    openPopUp.addEventListener('click', function (e) {
+        e.preventDefault();
+        popUp.classList.add('active');
+        scrollController.disabledScroll();
+    })
+}
 
-closePopUp.addEventListener('click', () => {
-    popUp.classList.remove('active');
-    scrollController.enableScroll();
-})
+if (closePopUp){
+    closePopUp.addEventListener('click', () => {
+        popUp.classList.remove('active');
+        scrollController.enableScroll();
+    })
+}
+
 
 
 

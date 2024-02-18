@@ -33,6 +33,15 @@ body {
   @include viewport-xxl {
     max-width: 1660px;
   }
+
+  &.container--smaller-xl-xxl{
+    @include viewport-xl {
+        max-width: 1140px;
+      }
+      @include viewport-xxl {
+        max-width: 1420px;
+      }
+  }
 }
 .dot {
   display: none;

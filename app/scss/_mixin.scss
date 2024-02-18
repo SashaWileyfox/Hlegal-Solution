@@ -30,6 +30,15 @@
   background-clip: text;
 }
 
+@mixin subtitle{
+color: $main-color;
+font-weight: 700;
+font-size: 20px;
+@include viewport-md{
+    font-size: 30px;
+}
+}
+
 @mixin title($color: $text-color) {
   color: $color;
   font-size: 30px;
@@ -113,6 +122,5 @@
   &:active{
     background: $active-color;
     animation: none;
-
   }
 }

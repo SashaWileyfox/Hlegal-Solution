@@ -11,25 +11,19 @@
       display: flex;
       gap: 60px;
     }
-    @include viewport-xl {
-      max-width: 1140px;
-    }
-    @include viewport-xxl {
-      max-width: 1420px;
-    }
   }
 }
 
 .contacts {
   margin-bottom: 30px;
 
-  @include viewport-md{
+  @include viewport-md {
     margin-bottom: 60px;
   }
   @include viewport-lg {
     flex: 1 1 45%;
     margin-bottom: 0;
-}
+  }
 
   &__inner {
     line-height: 30px;

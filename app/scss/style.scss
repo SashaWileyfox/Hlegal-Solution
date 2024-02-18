@@ -7,7 +7,7 @@
 @import "tabs";
 @import "cards-I";
 @import "companies";
-@import "posts";
+@import "publications";
 @import "footer";
 
 // SLIDER IMPORT
@@ -17,9 +17,10 @@
 @import "team-swiper";
 @import "popup";
 @import "service-entry-page.scss";
-@import "service-offer";
+@import "service-entry-page-service-offer";
 @import "contacts";
 @import "team-page";
 @import "about-us-description";
 @import "about-us-swiper";
 @import "about-us-separator.scss";
+@import 'publications-entry-page'

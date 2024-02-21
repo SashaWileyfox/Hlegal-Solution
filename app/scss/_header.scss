@@ -422,7 +422,7 @@
     border-radius: $radius-md;
     padding: 7px 0;
     transition: 0.2s;
-    @include base-link($regular-color, none);
+    @include base-link($regular-color, $regular-color);
 
     &:hover {
       background: $separator-color;
@@ -435,8 +435,8 @@
       padding: 0;
       padding-bottom: 3px;
       border-radius: 0px;
-      @include base-link($basic-white, none);
-      
+      @include base-link($basic-white, $basic-white);
+
       &:hover {
         border-bottom: 2px solid $basic-white;
         background: none;
@@ -446,8 +446,9 @@
         color: $accent-color;
         border-color: $accent-color;
       }
-      
+
       &:active:hover {
+        color: $accent-color;
         border-color: $accent-color;
       }
     }
@@ -456,6 +457,7 @@
       background: none;
 
       &:hover {
+        color: $regular-color;
         border-bottom: 2px solid $regular-color;
       }
 
@@ -465,11 +467,12 @@
       }
     }
     &.current-page {
+      color: $accent-color;
+      border-color: $accent-color;
+      &:hover {
         color: $accent-color;
         border-color: $accent-color;
-        &:hover {
-          border-color: $accent-color;
-        }
       }
+    }
   }
 }

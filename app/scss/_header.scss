@@ -422,19 +422,12 @@
     border-radius: $radius-md;
     padding: 7px 0;
     transition: 0.2s;
-
-    &.current-page {
-      color: $accent-color;
-      border-color: $accent-color;
-      &:hover {
-        border-color: $accent-color;
-      }
-    }
-
     @include base-link($regular-color, none);
+
     &:hover {
       background: $separator-color;
     }
+
     @include viewport-md {
       font-size: 16px;
       border-bottom: 2px solid transparent;
@@ -443,14 +436,17 @@
       padding-bottom: 3px;
       border-radius: 0px;
       @include base-link($basic-white, none);
+      
+      &:hover {
+        border-bottom: 2px solid $basic-white;
+        background: none;
+      }
 
       &:active {
         color: $accent-color;
         border-color: $accent-color;
       }
-      &:hover {
-        border-bottom: 2px solid $basic-white;
-      }
+      
       &:active:hover {
         border-color: $accent-color;
       }
@@ -468,5 +464,12 @@
         border-color: $accent-color;
       }
     }
+    &.current-page {
+        color: $accent-color;
+        border-color: $accent-color;
+        &:hover {
+          border-color: $accent-color;
+        }
+      }
   }
 }

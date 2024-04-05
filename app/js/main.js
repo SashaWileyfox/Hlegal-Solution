@@ -1,70 +1,70 @@
 (() => {
-  const burgerOpen = document.querySelector(".header__box-burger");
-  const burgerClose = document.querySelector(".header__nav-close");
-  const navigationMenu = document.querySelector(".header__nav");
+    const burgerOpen = document.querySelector(".header__box-burger");
+    const burgerClose = document.querySelector(".header__nav-close");
+    const navigationMenu = document.querySelector(".header__nav");
 
-  burgerOpen.addEventListener("click", () => {
-    navigationMenu.classList.add("active");
-  });
-  burgerClose.addEventListener("click", () => {
-    navigationMenu.classList.remove("active");
-  });
+    burgerOpen.addEventListener("click", () => {
+        navigationMenu.classList.add("active");
+    });
+    burgerClose.addEventListener("click", () => {
+        navigationMenu.classList.remove("active");
+    });
 })();
 
 (() => {
-  const tabsitem = document.querySelectorAll(".tabs__link-item");
-  const tabsBlocks = document.querySelectorAll(".tabs__content-item");
+    const tabsitem = document.querySelectorAll(".tabs__link-item");
+    const tabsBlocks = document.querySelectorAll(".tabs__content-item");
 
-  tabsitem.forEach((tab, index) => {
-    tab.addEventListener("click", () => {
-      tabsBlocks.forEach((content) => {
-        content.classList.remove("active");
-      });
-      tabsitem.forEach((content) => {
-        content.classList.remove("active");
-      });
-      tabsitem[index].classList.add("active");
-      tabsBlocks[index].classList.add("active");
+    tabsitem.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+            tabsBlocks.forEach((content) => {
+                content.classList.remove("active");
+            });
+            tabsitem.forEach((content) => {
+                content.classList.remove("active");
+            });
+            tabsitem[index].classList.add("active");
+            tabsBlocks[index].classList.add("active");
+        });
     });
-  });
 })();
 
 (() => {
-  const isSwiper = document.querySelector(".swiper");
-  if (isSwiper) {
-    const swiper = new Swiper(".swiper", {
-      loop: true,
-      spaceBetween: 30,
-      speed: 200,
-      grabCursor: true,
-      pagination: {
-        el: ".swiper-pagination",
-      },
-    });
-  }
+    const isSwiper = document.querySelector(".swiper");
+    if (isSwiper) {
+        const swiper = new Swiper(".swiper", {
+            loop: true,
+            spaceBetween: 30,
+            speed: 200,
+            grabCursor: true,
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+    }
 })();
 
 (() => {
-  const isSwiper = document.querySelector(".achievements__swiper");
-  if (isSwiper) {
-    const swiper = new Swiper(".achievements__swiper", {
-      loop: true,
-      spaceBetween: 60,
-      slidesPerView: 1,
-      speed: 700,
-      grabCursor: true,
-      breakpoints:{
-        768:{
-            slidesPerView: 4,
-            spaceBetween: 40,
-        }
-        
-      },
-      pagination: {
-        el: ".achievements__pagination",
-      },
-    });
-  }
+    const isSwiper = document.querySelector(".achievements__swiper");
+    if (isSwiper) {
+        const swiper = new Swiper(".achievements__swiper", {
+            loop: true,
+            spaceBetween: 60,
+            slidesPerView: 1,
+            speed: 700,
+            grabCursor: true,
+            breakpoints: {
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                }
+
+            },
+            pagination: {
+                el: ".achievements__pagination",
+            },
+        });
+    }
 })();
 
 
@@ -72,7 +72,7 @@ const openPopUp = document.querySelector('.service-description__btn');
 const closePopUp = document.querySelector('.popup__close');
 const popUp = document.querySelector('.popup');
 
-if (openPopUp){
+if (openPopUp) {
     openPopUp.addEventListener('click', function (e) {
         e.preventDefault();
         popUp.classList.add('active');
@@ -80,15 +80,12 @@ if (openPopUp){
     })
 }
 
-if (closePopUp){
+if (closePopUp) {
     closePopUp.addEventListener('click', () => {
         popUp.classList.remove('active');
         scrollController.enableScroll();
     })
 }
-
-
-
 
 
 const scrollController = {
@@ -98,10 +95,10 @@ const scrollController = {
         document.body.style = `
         overflow: hidden;
         top: ${scrollController.scrollPosition}px;
-        left: 0;            //для того що правильно рацював на айфонах//
+        left: 0;            
         height: 100vh;
         width: 100vw;
-        padding-right: ${window.innerWidth - document.body.offsetWidth}px;  //щоб при відкритті контент не пригав//
+        padding-right: ${window.innerWidth - document.body.offsetWidth}px; 
         `;
         document.documentElement.style.scrollBehavior = 'unset'; //щоб при закритті не працював скрол смуз
     },
@@ -117,23 +114,4 @@ const scrollController = {
 
 
 
-// const formPopup = new Popup({
-//   id: "my-popup",
-//   title: "We would like to help you",
-//   content: `
-//     <form >
-//         <input type="text" name="name" placeholder="Name" class="first-input">
-//         <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
-//         <h3>How to answer you?</h3>
-//         <input type="tel" name="phone number" placeholder="Phone Number" class="third-input">
-//         <input type="email" name="email" placeholder="Email" class="fourth-input">
-//         <button type="submit">Send message</button>
-//     </form>`,
-// });
 
-// const randomBtn = document.querySelector(".service-description__btn");
-// if (randomBtn) {
-//   randomBtn.addEventListener("click", () => {
-//     formPopup.show();
-//   });
-// }

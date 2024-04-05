@@ -30,13 +30,13 @@
   background-clip: text;
 }
 
-@mixin subtitle{
-color: $main-color;
-font-weight: 700;
-font-size: 20px;
-@include viewport-md{
+@mixin subtitle {
+  color: $main-color;
+  font-weight: 700;
+  font-size: 20px;
+  @include viewport-md {
     font-size: 30px;
-}
+  }
 }
 
 @mixin title($color: $text-color) {
@@ -68,14 +68,17 @@ font-size: 20px;
 @mixin mini-link {
   display: inline-block;
   position: relative;
-  margin: 0 0 10px 0;
   padding: 0 10px 0 0;
-  @include base-link;
   text-transform: uppercase;
+  color: $regular-color;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 1px;
   transition: 0.2s;
+
+  &:hover {
+    color: $accent-color;
+  }
 
   &::before {
     content: "";
@@ -119,7 +122,7 @@ font-size: 20px;
     background-color: $hover-color;
     animation: none;
   }
-  &:active{
+  &:active {
     background: $active-color;
     animation: none;
   }

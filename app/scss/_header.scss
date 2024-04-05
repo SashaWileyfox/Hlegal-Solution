@@ -1,10 +1,5 @@
 .wrapper {
   position: relative;
-  margin-bottom: 50px;
-
-  @include viewport-md {
-    margin-bottom: 80px;
-  }
 
   &::before {
     content: "";
@@ -117,9 +112,9 @@
     }
   }
   &__container--margin {
-    margin-bottom: 30px;
+    margin: 0 auto 30px auto;
     @include viewport-md {
-      margin-bottom: 60px;
+      margin: 0 auto 60px auto;
     }
   }
 

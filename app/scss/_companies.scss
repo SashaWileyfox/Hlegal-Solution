@@ -2,6 +2,10 @@
   @include viewport-xxl {
     padding-bottom: 60px;
   }
+  &__container{
+    max-width: 1720px;
+    margin: 0 auto;
+  }
   &__title {
     color: #323264;
     font-size: 14px;
@@ -25,7 +29,6 @@
     }
 
     @include viewport-xxl {
-      max-width: 1720px;
       border-radius: $radius-md;
       overflow: hidden;
     }

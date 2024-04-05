@@ -1,5 +1,10 @@
 .team {
   padding-bottom: 60px;
+  margin-top: 50px;
+
+  @include viewport-md {
+    margin-top: 80px;
+  }
 
   &__container {
   }

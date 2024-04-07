@@ -37,6 +37,7 @@
             spaceBetween: 30,
             speed: 200,
             grabCursor: true,
+            slideToClickedSlide: true,
             pagination: {
                 el: ".swiper-pagination",
             },
@@ -53,6 +54,7 @@
             slidesPerView: 1,
             speed: 700,
             grabCursor: true,
+            slideToClickedSlide: true,
             breakpoints: {
                 768: {
                     slidesPerView: 4,
